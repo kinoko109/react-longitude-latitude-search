@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 import axios from 'axios';
 
 import SearchForm from './SearchForm'
@@ -62,7 +63,7 @@ class App extends Component {
 
   render() {
     return(
-      <div>
+      <Wrapper>
         <h1>緯度経度検索</h1>
         <SearchForm onSubmit={place => this.handlePlaceSubmit(place)} />
         <GeocodeResult 
@@ -70,9 +71,13 @@ class App extends Component {
           lat={this.state.lat}
           lng={this.state.lng}
         />
-      </div>
+      </Wrapper>
     );
   }
 }
+
+const Wrapper = styled.div`
+  text-align: center;
+`
 
 export default App;

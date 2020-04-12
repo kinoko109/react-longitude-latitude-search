@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 
 export default class SearchForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      place: '東京タワー',
+      place: '東京',
     }
   }
 
@@ -28,18 +29,34 @@ export default class SearchForm extends Component {
   render() {
     return(
       <form onSubmit={event => this.handleSubmit(event)}>
-        <input 
-          type="text"
+        <InputText 
           value={this.state.place}
-          className="search-input"
           onChange={event => this.handlePlace(event.target.value)}
         />
-        <input 
-          type="submit"
+        <InputSubmit 
           value="検索"
-          className="search-submit"
         />
       </form>
     );
   }
 }
+
+const InputText = styled.input.attrs({
+  type: 'text',
+})`
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  height: 30px;
+  padding: 5px 10px;
+  width: 200px;
+`;
+
+const InputSubmit = styled.input.attrs({
+  type: 'submit',
+})`
+  border-radius: 5px;
+  height: 30px;
+  margin-left: 20px;
+  width: 100px;
+`;
