@@ -12,6 +12,7 @@ class App extends Component {
     super(props);
     this.state = {
       address: "",
+      errorMessage: "",
       lat: 0,
       lng: 0,
     };
@@ -23,7 +24,8 @@ class App extends Component {
    */
   showErrorMessage(errorMessage) {
     this.setState({
-      address: errorMessage,
+      address: "",
+      errorMessage: errorMessage,
       lat: "0",
       lng: "0",
     });
@@ -66,7 +68,7 @@ class App extends Component {
       <Wrapper>
         <h1>緯度経度検索</h1>
         <SearchForm handleSubmit={(place) => this.handlePlaceSubmit(place)} />
-        <GeocodeResult address={this.state.address} lat={this.state.lat} lng={this.state.lng} />
+        <GeocodeResult address={this.state.address || this.state.errorMessage} lat={this.state.lat} lng={this.state.lng} />
         <Map lat={this.state.lat} lng={this.state.lng} />
       </Wrapper>
     );
