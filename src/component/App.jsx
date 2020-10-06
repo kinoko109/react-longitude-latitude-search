@@ -12,8 +12,8 @@ class App extends Component {
     super(props);
     this.state = {
       address: '',
-      lat: '0',
-      lng: '0',
+      lat: 0,
+      lng: 0,
     };
   }
 
