@@ -7,10 +7,11 @@ import GeocodeResult from './GeocodeResult'
 import Map from './Map'
 
 const GEOCODE_URL = 'https://maps.googleapis.com/maps/api/geocode/json';
-const API_KEY = 'AIzaSyDhWL-OMpUa8iyX_DgoEN3K0L5JvnfIE1Q';
+const API_KEY = process.env.REACT_APP_API_KEY;
 
 class App extends Component {
   constructor (props) {
+    console.log(API_KEY);
     super(props);
     this.state = {
       address: '',
