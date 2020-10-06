@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import axios from "axios";
 
-import { API_KEY, GEOCODE_URL } from "../const";
+import { API_KEY, GEOCODE_URL, errorMessage } from "../const";
 import SearchForm from "./SearchForm";
 import GeocodeResult from "./GeocodeResult";
 import Map from "./Map";
@@ -48,16 +48,16 @@ class App extends Component {
             break;
           }
           case "ZERO_RESULTS": {
-            this.showErrorMessage("結果がありません。");
+            this.showErrorMessage(errorMessage[0]);
             break;
           }
           default: {
-            this.showErrorMessage("エラーが発生しました。");
+            this.showErrorMessage(errorMessage[1]);
           }
         }
       })
       .catch(() => {
-        this.showErrorMessage("通信エラー...");
+        this.showErrorMessage(errorMessage[2]);
       });
   }
 
