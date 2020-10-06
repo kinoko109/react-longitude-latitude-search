@@ -23,7 +23,7 @@ export default class SearchForm extends Component {
    */
   handleSubmit(event) {
     event.preventDefault();
-    this.props.onSubmit(this.state.place);
+    this.props.handleSubmit(this.state.place);
   }
 
   render() {
