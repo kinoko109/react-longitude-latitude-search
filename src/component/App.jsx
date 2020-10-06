@@ -2,16 +2,13 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 
+import {API_KEY, GEOCODE_URL} from "../const";
 import SearchForm from './SearchForm'
 import GeocodeResult from './GeocodeResult'
 import Map from './Map'
 
-const GEOCODE_URL = 'https://maps.googleapis.com/maps/api/geocode/json';
-const API_KEY = process.env.REACT_APP_API_KEY;
-
 class App extends Component {
   constructor (props) {
-    console.log(API_KEY);
     super(props);
     this.state = {
       address: '',
