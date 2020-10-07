@@ -19,8 +19,10 @@ const Map = ({ lat, lng }) => {
     <InnerMap 
       containerElement={(<div />)}
       mapElement={(<Wrapper />)}
+      // positionにはlat,lngのオブジェクトを渡す
       position={position}
-      marker={{position}}
+      // markerにはpositionのママを渡すため{ positon }と書く
+      marker={{ position }}
     />
   )
 };
