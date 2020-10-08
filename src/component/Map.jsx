@@ -21,7 +21,7 @@ const Map = ({ lat, lng }) => {
       mapElement={(<Wrapper />)}
       // positionにはlat,lngのオブジェクトを渡す
       position={position}
-      // markerにはpositionのママを渡すため{ positon }と書く
+      // markerにはpositionのママを渡すためオブジェクトの省略記法で{ positon }と書く
       marker={{ position }}
     />
   )
